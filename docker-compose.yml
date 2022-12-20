@@ -6,7 +6,7 @@ services:
     environment:
       - TZ=Asia/Shanghai
     volumes:  # 默认配置不需要volumes，请删除
-      -renewx:/app/data
+      - renewx:/app/data
     ports:
       - "1066:1066"
     restart: unless-stopped
