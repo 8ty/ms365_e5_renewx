@@ -2,12 +2,18 @@ version: '3'
 services:
   renewx:
     image: gladtbam/ms365_e5_renewx:latest
+    container_name: renewx
     environment:
       - TZ=Asia/Shanghai
     volumes:  # 默认配置不需要volumes，请删除
-      - ./renewx/Deploy:/renewx/Deploy/
-      - ./renewx/appdata:/renewx/appdata/
+      -renewx:/app/data
     ports:
       - "1066:1066"
     restart: unless-stopped
+
+
+volumes:
+ renewx:
+    driver_opts:
+      size: 200Mi
 
